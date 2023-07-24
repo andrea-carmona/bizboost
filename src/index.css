@@ -3,61 +3,67 @@
 =========================================*/
 
 /**
-TABLE OF CONTENTS
+  TABLE OF CONTENTS
 
-COLORS
-Brand colors............................These are the main brand colors.
-Neutral colors..........................White and black, gray sacale, secondary colors.
-Utility colors..........................Other colors to represent states: info, warning, sucess, etc.
+  COLORS
+  Brand colors............................These are the main brand colors.
+  Neutral colors..........................White and black, gray sacale, secondary colors.
+  Utility colors..........................Other colors to represent states: info, warning, sucess, etc.
 
-TYPOGRAPHY
-Font famillies..........................The fonts used in the design system.
-Font weights............................Font weights
-Sizes...................................Font sizing for body text, paragraphs, inputs
-Heading sizes...........................Font sizing for page headings
+  TYPOGRAPHY
+  Font famillies..........................The fonts used in the design system.
+  Font weights............................Font weights
+  Sizes...................................Font sizing for body text, paragraphs, inputs
+  Heading sizes...........................Font sizing for page headings
 
-BREAKPOINTS
-Breakpoints.............................Global responsive breakpoints definitions
+  BREAKPOINTS
+  Breakpoints.............................Global responsive breakpoints definitions
 */
 
 :root {
   /*=======================================
-  COLORS
+    COLORS
   =========================================*/
 
-  /*============================
-  Brand Colors
-  ============================*/
+  /*=========================
+    Brand Colors
+  ==========================*/
   --primary: #2292b1;
   --gradient-start: #1b3385;
   --gradient-end: #25c5c9;
 
-  /*============================
-  Neutral Colors
-  ============================*/
+  /*=========================
+    Neutral Colors
+  ==========================*/
   --background: #0a0c11;
   --body-text: #abadb3;
   --border-color: #323438;
   --sub-menu-bg: #222;
   --white: #fff;
 
+  /*=========================
+    Utility Colors
+  ==========================*/
+
   /*=======================================
-  TYPOGRAPHY
+    TYPOGRAPHY
   =========================================*/
   /* 
-  1. The Poppins font. This is the main font.
-  https://fonts.googleapis.com/css?family=Poppins
+    1. The Poppins font. This is the main font.
+    https://fonts.googleapis.com/css?family=Poppins
 
-  2. The Courier font. This is used for <pre> code.
-  https://fonts.googleapis.com/css?family=Courier+Prime
+    2. The Courier font. This is used for <pre> code.
+    https://fonts.googleapis.com/css?family=Poppins
   */
-  --base-font: 20px;
-  --primary-font: "Poppins";
-  --secondary-font: "Courier+Prime";
 
-  /*=======================================
-  Font Weights
-  =========================================*/
+  /*=========================
+    Font famillies
+  ==========================*/
+  --primary-font: "Poppins";
+
+  /*=========================
+  Font weights
+  ==========================*/
   --thin: 100;
   --extra-light: 200;
   --light: 300;
@@ -67,18 +73,24 @@ Breakpoints.............................Global responsive breakpoints definition
   --bold: 700;
   --extra-bold: 800;
   --heavy: 900;
+
+  /*=========================
+  Sizes
+  ==========================*/
+  --base-font: 20px;
 }
 
 /*=======================================
-BREAKPOINTS
+    RESETS
 =========================================*/
-
 body {
   box-sizing: border-box;
   font-family: var(--primary-font);
   font-size: var(--base-font);
   color: var(--body-text);
   background: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -87,6 +99,9 @@ body {
   box-sizing: inherit;
 }
 
+/*=========================
+  Heading Sizes
+==========================*/
 h1,
 h2,
 h3,
@@ -100,18 +115,20 @@ h6 {
 }
 
 h1 {
-  font-size: 4em;
-  line-height: 1.5em;
+  font-size: 2.1em;
+  line-height: 1.72em;
 }
 
 h2 {
-  font-size: 2em;
-  line-height: 2.85em;
+  font-size: 1.6em;
+  line-height: 1.29em;
+  text-transform: capitalize;
+  margin-top: 14px;
 }
 
 h3 {
-  font-size: 1.47em;
-  line-height: 1.92em;
+  font-size: 1.6em;
+  font-weight: var(--bold);
 }
 
 h4,
@@ -121,6 +138,8 @@ h5 {
 
 h6 {
   font-weight: var(--semi-bold);
+  font-size: 16px;
+  color: var(--body-text);
 }
 
 ul {
@@ -129,8 +148,21 @@ ul {
   padding: 0;
 }
 
+ul li {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
 a {
-  color: var(--body-Text);
+  color: var(--body-text);
   text-decoration: none;
   font-size: 0.9em;
   font-style: normal;
@@ -140,142 +172,260 @@ a {
 }
 
 a:hover,
-.logo:hover {
+.logo h2:hover {
   color: var(--primary);
-}
-
-.selected {
-  color: var(--primary);
-}
-
-.button-gradient {
-  border-radius: 30px;
-  background: linear-gradient(
-    90deg,
-    var(--gradient-start) 0%,
-    var(--gradient-end) 100%
-  );
-  width: 105px;
-  padding: 15px 34.86px 16.08px 35px;
-  border: 0;
-  height: 29px;
-  font-size: 0.9em;
-  font-weight: var(--bold);
-  line-height: 1.4em;
-  text-transform: capitalize;
-  color: var(--white);
-}
-
-/*=======================================
-HERO
-=========================================*/
-header {
-  display: flex;
-  width: 100%;
-  height: 118.08px;
-  margin: 0 auto;
-  padding-left: 96px;
-  padding-right: 105px;
-}
-
-header * {
-  flex: 1;
-}
-
-.top-menu li {
-  margin: 0 18px;
-}
-
-.top-menu li:nth-child(2) ul {
-  display: none;
-}
-
-.top-menu li:nth-child(2) {
-  min-width: 112px;
-  position: relative;
-}
-
-.top-menu li:nth-child(2):hover ul {
-  display: block;
-}
-
-.sub-menu {
-  position: absolute;
-  top: 44px;
-  left: -20px;
-  z-index: 99;
-}
-
-.sub-menu li {
-  width: 235px;
-  height: 44px;
-  background-color: var(--sub-menu-bg);
-  border-bottom: 1px solid var(--border-color);
-  padding-left: 23px;
-}
-
-.sub-menu a {
-  font-size: 0.75em;
-  font-weight: var(--normal);
-}
-
-.logo {
-  font-size: 1.6em;
-  font-weight: var(--bold);
-  color: var(--white);
-}
-
-.logo:hover {
-  color: var(--primary);
-}
-
-.social-links {
-  justify-content: flex-end;
-}
-
-.social-links li {
-  flex: 0;
-  padding: 0 16px;
-  position: relative;
-}
-
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  position: absolute;
-  top: -6px;
-  left: 0px;
-}
-
-.circle:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-main section {
-  width: 760px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 76px;
-  padding-bottom: 70px;
-}
-
-main section p {
-  margin-bottom: 50px;
-  font-size: 1.2em;
-  font-weight: var(--light);
 }
 
 .lowlight {
   opacity: 0.5;
 }
 
-.box-row {
-  display: flex;
+.gradient-button {
+  padding: 15px 34.86px 16.08px 35px;
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--white);
+  border-radius: 30px;
+  font-size: 0.9em;
+  font-weight: var(--bold);
+  line-height: 1.6em;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start) 0%,
+    var(--gradient-end) 100%
+  );
 }
 
-.box p {
-  width: 840px;
-  height: 395.08;
+.gradient-button:hover {
+  background: var(--white);
+  color: var(--background);
+}
+
+/*=======================================
+    Mobile First
+=========================================*/
+.blocks {
+  padding: 0 30px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  flex: 3;
+}
+
+.mobile {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile img {
+  width: 16px;
+}
+
+.desktop {
+  display: none;
+}
+
+.submenu {
+  display: none;
+}
+
+.social {
+  flex: 3;
+  display: flex;
   justify-content: center;
+}
+
+.social ul {
+  column-gap: 25px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 42px 0;
+  margin: 0 auto;
+}
+
+main > * {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-tagline {
+  margin-top: 24px;
+}
+
+.hero-cta {
+  margin-top: 14px;
+}
+
+.hero-video video {
+  width: 100%;
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+/* .our-services *,
+.big-numbers * {
+  border: 1px solid var(--body-text);
+} */
+
+.our-services {
+  margin: 42px 0;
+}
+
+.big-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 42px;
+}
+
+.number-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-box > * {
+  display: flex;
+  justify-content: center;
+}
+
+/*=======================================
+    TABLET & DESKTOP BREAKPOINTS
+=========================================*/
+@media all and (min-width: 479px) and (max-width: 1280px) {
+}
+
+@media all and (min-width: 479px) {
+  .selected {
+    color: var(--primary);
+  }
+
+  .circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    position: absolute;
+    left: -11px;
+    top: -2px;
+  }
+
+  .circle:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .blocks {
+    padding: 0 88px;
+  }
+
+  .hero {
+    padding: 0 85px;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .logo h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+  }
+
+  .desktop ul {
+    column-gap: 35px;
+  }
+
+  .desktop ul li:nth-child(2) img {
+    width: 16px;
+  }
+
+  .desktop ul li {
+    position: relative;
+  }
+
+  .desktop ul li:nth-child(2):hover .submenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submenu {
+    width: 230px;
+    background-color: var(--sub-menu-bg);
+    z-index: 99;
+  }
+
+  .submenu li {
+    min-width: 100%;
+    padding-left: 20px;
+    border: 1px solid var(--border-color);
+  }
+
+  .submenu li:hover {
+    padding-left: 30px;
+  }
+
+  .social {
+    flex: 1;
+  }
+
+  h1 {
+    font-size: 4em;
+    line-height: 1.72em;
+  }
+
+  h3 {
+    font-size: 2.27em;
+  }
+
+  main {
+    max-width: 760px;
+    /* padding: 70px 320px; */
+  }
+
+  .our-services {
+    display: flex;
+    margin: 131px 0;
+  }
+
+  .big-numbers {
+    flex-direction: row;
+    gap: 40px;
+    padding: 0 80px;
+    margin-bottom: 131px;
+  }
+
+  .big-numbers > * {
+    flex: 1;
+  }
+
+  .our-services > * {
+    flex: 1;
+  }
+  .our-services-layout {
+    padding: 0 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
