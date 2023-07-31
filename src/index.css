@@ -293,8 +293,7 @@ main > * {
   display: flex;
   flex-direction: column;
 }
-
-.number-box > * {
+` .number-box > * {
   display: flex;
   justify-content: center;
 }
