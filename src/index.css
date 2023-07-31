@@ -131,6 +131,11 @@ h3 {
   font-weight: var(--bold);
 }
 
+h4 {
+  font-size: 1.2em;
+  line-height: 1.72em;
+}
+
 h4,
 h5 {
   font-weight: var(--bold);
@@ -273,11 +278,6 @@ main > * {
   object-fit: cover;
 }
 
-/* .our-services *,
-.big-numbers * {
-  border: 1px solid var(--body-text);
-} */
-
 .our-services {
   margin: 42px 0;
 }
@@ -297,6 +297,46 @@ main > * {
 .number-box > * {
   display: flex;
   justify-content: center;
+}
+
+/*=======================================
+    FEATURED CONTENT
+=========================================*/
+
+/* .featured-content-layout * {
+  border: 1px solid var(--body-text);
+} */
+
+.featured-content-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.featured-content {
+  text-align: center;
+}
+
+.box a {
+  position: relative;
+}
+
+hr {
+  position: absolute;
+  top: 17px;
+  text-align: start;
+  border: 1px solid var(--gradient-end);
+  width: 95px;
+}
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 39.9px;
+}
+
+.boxes-container .box {
+  padding: 44px;
+  border: 2px solid var(--border-color);
 }
 
 /*=======================================
@@ -427,5 +467,17 @@ main > * {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+  }
+
+  .featured-content-layout {
+    gap: 44px;
+  }
+
+  .featured-content-layout > * {
+    flex: 1;
+  }
+
+  .boxes-container {
+    flex-direction: row;
   }
 }
