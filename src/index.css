@@ -136,20 +136,22 @@ h4 {
   line-height: 1.72em;
 }
 
-h4,
 h5 {
-  font-weight: var(--bold);
+  font-size: 0.9em;
+  font-weight: var(--semi-bold);
+  line-height: 1em;
 }
 
 h6 {
   font-weight: var(--semi-bold);
-  font-size: 16px;
+  font-size: 0.8em;
   color: var(--body-text);
 }
 
 ul {
   list-style-type: none;
   display: flex;
+  flex-direction: row;
   padding: 0;
 }
 
@@ -293,7 +295,7 @@ main > * {
   display: flex;
   flex-direction: column;
 }
-` .number-box > * {
+.number-box > * {
   display: flex;
   justify-content: center;
 }
@@ -301,10 +303,6 @@ main > * {
 /*=======================================
     FEATURED CONTENT
 =========================================*/
-
-/* .featured-content-layout * {
-  border: 1px solid var(--body-text);
-} */
 
 .featured-content-layout {
   display: flex;
@@ -339,8 +337,145 @@ hr {
 }
 
 /*=======================================
+    Promotional Contact
+=========================================*/
+
+/* .promotional-contact-layout * {
+  border: 1px solid var(--body-text);
+} */
+
+.promotional-contact-layout {
+  display: flex;
+  position: relative;
+  padding: 42px 28px;
+}
+.promotional-contact {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.promotional-contact .rectangle {
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.promotional-contact-layout a {
+  margin-top: 35px;
+}
+
+.overlay {
+  background-color: #000;
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.promotional-contact-layout img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/*=======================================
+    Footer
+=========================================*/
+/* footer > * {
+  border: 1px solid var(--body-text);
+} */
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 0;
+}
+
+footer:first-child {
+  flex: 1;
+}
+
+footer:last-child {
+  flex: 2;
+}
+
+.newsletter h5 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.links ul {
+  flex-direction: column;
+}
+
+.links a {
+  font-size: 0.8em;
+}
+
+.selected {
+  color: var(--primary);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-social ul {
+  gap: 20px;
+}
+
+.footer-social li {
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 0.65em;
+  border-top: 1px solid var(--border-color);
+  padding: 20px 30px 0;
+}
+
+#email {
+  font-size: 0.7em;
+  padding: 13px;
+  background-color: transparent;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  width: 218px;
+}
+.email-btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 0;
+  padding: 11px 16px 12px;
+  margin-left: -6px;
+  font-size: 0.7em;
+}
+
+.cta {
+  padding: 5px 0 40px;
+}
+
+/*=======================================
     TABLET & DESKTOP BREAKPOINTS
 =========================================*/
+
 @media all and (min-width: 479px) and (max-width: 1280px) {
 }
 
@@ -478,5 +613,27 @@ hr {
 
   .boxes-container {
     flex-direction: row;
+  }
+
+  .box img:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  .promotional-contact-layout {
+    padding: 180px 50px;
+  }
+
+  .circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    position: absolute;
+    left: -11px;
+    top: -10px;
+  }
+
+  .circle:hover {
+    background: rgba(255, 255, 255, 0.25);
   }
 }
